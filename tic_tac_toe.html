@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="tic_tac_toe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div class="screen home-screen" id="home-screen">
+        <div class="home-content">
+            <h1 class="home-title">Tic-Tac Toe</h1>
+            <div class="mode-buttons">
+                <button id="pvp-btn" class="mode-btn">Player vs Player</button>
+                <button id="pvc-btn" class="mode-btn">Player vs Computer</button>
+            </div>
+            <div class="difficulty-selector hide" id="difficulty-selector">
+                <h3>Select Difficulty</h3>
+                <div class="difficulty-buttons">
+                    <button id="easy-btn" class="diff-btn">Easy</button>
+                    <button id="hard-btn" class="diff-btn">Hard</button>
+                </div>
+            </div>
+            <div class="theme-toggle-container">
+                <button id="home-theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div class="screen game-screen hide" id="game-screen">
+        <div class="game-wrapper">
+            <div class="header">
+                <h1 class="game-title"></h1>
+                <div class="header-controls">
+                    <button id="home-button" class="nav-btn">🏠</button>
+                    <button id="game-theme-toggle" class="nav-btn">🌙</button>
+                </div>
+            </div>
+            <div class="status-container">
+                <div class="player-turn">Player <span id="current-player">X</span>'s Turn</div>
+            </div>
+            <div class="game-board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <div class="controls">
+                <button id="reset-btn">Reset Game</button>
+            </div>
+            <div class="message-overlay hide" id="message">
+                <div class="message-content">
+                    <p id="winner-text"></p>
+                    <p id="motivational-quote"></p>
+                    <button id="new-game-btn">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="tic_tac_toe.js"></script>
+</body>
+</html>
