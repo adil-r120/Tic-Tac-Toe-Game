@@ -39,6 +39,7 @@ body {
     background: var(--primary-bg);
     background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
     min-height: 100vh;
+    min-height: 100dvh; /* For mobile browsers */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -656,5 +657,125 @@ button:active {
     #motivational-quote {
         font-size: 1.4rem;
         margin-bottom: 30px;
+    }
+}
+
+/* Small Mobile Devices (e.g. iPhone SE) */
+@media (max-width: 375px) {
+    .screen {
+        padding: 15px;
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .home-title {
+        font-size: 1.8rem;
+    }
+
+    .game-title {
+        font-size: 1.5rem;
+    }
+
+    .cell {
+        font-size: 2rem;
+        border-radius: 8px;
+    }
+
+    .game-board {
+        max-width: 280px;
+    }
+
+    button {
+        padding: 10px 15px;
+        min-width: 120px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+        align-items: flex-start; /* Allow scrolling if needed */
+        overflow-y: auto;
+    }
+
+    .screen {
+        padding: 15px 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        max-width: 700px;
+    }
+
+    .home-content, .game-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    /* Adjust Home Screen Landscape layout */
+    .home-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .home-title {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 2rem;
+    }
+
+    .mode-buttons {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+
+    /* Adjust Game Screen Landscape layout */
+    .game-wrapper {
+        flex-wrap: nowrap;
+    }
+
+    .header {
+        flex-direction: column; /* Keep title and controls vertical on the side */
+        margin-bottom: 0;
+        margin-right: 20px;
+        min-width: 150px;
+    }
+
+    .game-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .status-container {
+        margin-bottom: 15px;
+    }
+
+    .game-board {
+        margin: 0;
+        max-width: 280px; /* Smaller board for landscape height */
+    }
+    
+    .cell {
+        font-size: 2rem;
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Sidebar container for non-board elements */
+    .game-sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
